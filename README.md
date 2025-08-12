@@ -1,2 +1,2 @@
 # stocks-buyer
-Java + Spring APII
+Java + Spring API
