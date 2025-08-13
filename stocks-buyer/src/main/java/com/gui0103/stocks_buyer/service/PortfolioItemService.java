@@ -2,6 +2,7 @@ package com.gui0103.stocks_buyer.service;
 
 import com.gui0103.stocks_buyer.model.PortfolioItem;
 import com.gui0103.stocks_buyer.repository.PortfolioItemRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,10 @@ public class PortfolioItemService {
 
     public PortfolioItem setPortfolioItem(PortfolioItem item) {
         return portfolioItemRepository.save(item);
+    }
+
+    public PortfolioItem getItemById(Long id) {
+        return portfolioItemRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Portfolio item not found"));
     }
 }

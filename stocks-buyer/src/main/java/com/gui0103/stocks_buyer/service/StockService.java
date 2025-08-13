@@ -36,8 +36,10 @@ public class StockService {
         stockRepository.save(stock);
     }
 
-    // External API
-    //public BigDecimal getCurrentPrice(String symbol) {
-    //    return stockApiClient.getCurrentPrice(symbol);
-    //}
+    // Mocked value for testing
+    // To do: Integrate External API
+    public BigDecimal getCurrentPrice(String symbol) {
+        BigDecimal test = new BigDecimal (12.52);
+        return test;
+    }
 }
